@@ -38,11 +38,7 @@ pipeline {
             }
         } 
    
-    stage('Cleanup') {
-        steps {
-            deleteDir()   // Jenkins native cleanup, works without rm
-        }
-    }
+
     
 
                 stage('E2E'){
@@ -63,11 +59,12 @@ pipeline {
             }
         } 
     }
-
+/*
     post {
         always {
             junit 'jest-results/junit.xml'
         }
     }
+    */
 }
 
