@@ -37,12 +37,13 @@ pipeline {
                 '''
             }
         } 
-   
+   /*
     stage('Cleanup') {
         steps {
             deleteDir()   // Jenkins native cleanup, works without rm
         }
     }
+    */
 
                 stage('E2E'){
             agent {
