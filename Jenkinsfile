@@ -28,6 +28,7 @@ pipeline {
                     image 'node:18-alpine'
                     reuseNode true
                 }
+                    }
             steps {
                 echo 'Testing..'
                 sh '''
@@ -36,5 +37,6 @@ pipeline {
                 npm test -a
                 '''
             }
+            
     }
 }
