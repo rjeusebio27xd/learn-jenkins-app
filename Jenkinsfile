@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        /*
+        
         stage('Build') {
             agent {
                 docker {
@@ -21,7 +21,7 @@ pipeline {
                 '''
             }
         }
-        */
+        
         stage('Test'){
             agent {
                 docker {
@@ -32,18 +32,12 @@ pipeline {
             steps {
                 sh '''
                 echo "Testing Stage"
-                #test -f build/index.html
+                test -f build/index.html
                 npm test
                 '''
             }
         } 
    
-    }
-
-    post {
-        always {
-            junit 'jest-results/junit.xml'
-        }
     }
     
 }
